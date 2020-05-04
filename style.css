@@ -5,7 +5,8 @@
 }
 
 html {
-    font-size: .75vw;
+    font-size: .76vw;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -13,6 +14,17 @@ body {
     font-weight: 100;
     color: #777;
     margin: 3rem;
+}
+
+::-webkit-scrollbar {
+	width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 20px;
+	background-image: linear-gradient(to bottom, 
+    rgb(243, 39, 250), 
+    rgb(183, 35, 251));
 }
 
 .top-bar {
@@ -29,6 +41,7 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     color: #eee;
+    animation: unfadeup 2s;
 }
 
 .signup-btn {
@@ -50,6 +63,19 @@ body {
 
 .logo {
     height: 3.5rem;
+    animation: unfadeup 2s;
+}
+
+@keyframes unfadeup {
+    0% {
+        transform: translateY(5rem);
+        opacity: 0%;
+    }
+
+    100% {
+        transform: translateY(0px);
+        opacity: 100%;
+    }
 }
 
 .content {
@@ -60,7 +86,7 @@ body {
 .card-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 7rem
+    grid-gap: 7rem;
 }
 
 .card {
@@ -76,7 +102,7 @@ body {
 }
 
 .card-image-block {
-    clip-path: polygon(0 0, 100% 0%, 100% 83%, 0% 98%);
+    clip-path: polygon(0 0, 100% 0%, 100% 83%, 0% 100%);
 }
 
 .card-image-overlay {
